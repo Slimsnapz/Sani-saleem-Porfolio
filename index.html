@@ -11,7 +11,7 @@
 </head>
 <body>
     <nav class="site-nav" aria-label="Main navigation">
-        <a class="logo" href="#top">Saleem.</a>
+        <div class="logo" id="secretAdminTrigger" style="cursor: pointer; user-select: none;" title="Saleem.">Saleem.</div>
         <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
             <span></span>
             <span></span>
@@ -97,13 +97,39 @@
             </div>
         </section>
 
-        <section id="owner-dashboard" class="admin-section section-band" aria-label="Owner project dashboard">
+        <dialog id="projectModal" class="project-modal">
+            <button class="modal-close" aria-label="Close modal">&times;</button>
+            <div class="modal-container">
+                <div class="modal-visuals" id="modalVisuals">
+                    </div>
+                <div class="modal-content">
+                    <h2 id="modalTitle">Project Title</h2>
+                    <div class="project-tags" id="modalTags" style="margin-bottom: 24px;"></div>
+                    <div class="modal-description" id="modalDesc"></div>
+                    
+                    <div style="margin-top: 40px; display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a id="modalLiveLinkBtn" href="#" target="_blank" class="btn primary" style="display: none; align-items: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                            View Live Project
+                        </a>
+
+                        <button class="btn secondary" id="downloadPdfBtn" style="display: none; align-items: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 8px;"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                            Download Report
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </dialog>
+
+        <section id="adminDashboard" class="admin-section section-band" aria-label="Owner project dashboard">
             <div class="container admin-shell">
                 <div class="admin-intro">
                     <p class="eyebrow">Private backend</p>
                     <h2>Project Manager</h2>
-                    <p>Add a project, upload clean screenshots, and attach a README file. The screenshots and README preview will display together as a smooth project slideshow.</p>
-                    <p class="admin-note">Access this page directly with <code>#owner-dashboard</code>, or double-click the Saleem logo. Keep the password private before hosting this publicly.</p>
+                    <p>Manage your portfolio securely. Upload new projects, edit existing details, attach PDF reports, link live dashboards, and manage project slideshows.</p>
+                    <p class="admin-note">Keep your password secure. No unauthorized visitor can bypass this login or alter your database.</p>
                 </div>
 
                 <div class="admin-panel">
@@ -113,38 +139,57 @@
                             <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter password">
                             <button class="btn primary" type="submit">Unlock</button>
                         </div>
-                        <p class="form-help">Default password: <strong>saleem-admin</strong>. Change it in <code>script.js</code>.</p>
-                        <p class="form-message" id="loginMessage" role="status"></p>
+                        <p class="form-message" id="loginMessage" role="status" style="font-weight: 600; font-size: 1rem;"></p>
                     </form>
 
                     <div class="admin-workspace" id="adminWorkspace" hidden>
-                        <a href="#top" class="btn secondary">Back to portfolio</a>
+                        <button class="btn secondary" id="exitAdminBtn" style="margin-bottom: 24px;">Exit Dashboard</button>
+                        
+                        <div class="admin-manage-section">
+                            <h3 style="margin-bottom: 16px;">Manage Existing Projects</h3>
+                            <div id="adminProjectsList" class="projects-grid" style="margin-bottom: 40px;">
+                                </div>
+                        </div>
+
+                        <hr style="border-color: var(--line); margin: 30px 0;">
+
+                        <h3 id="formTitle" style="margin-bottom: 16px;">Publish New Project</h3>
                         <form id="projectForm" class="project-form">
+                            <input type="hidden" name="projectId" id="projectId">
+                            
                             <div class="form-grid">
                                 <label>
                                     Project title
-                                    <input name="title" type="text" placeholder="e.g. Fraud Detection Dashboard" required>
+                                    <input name="title" id="projectTitle" type="text" placeholder="e.g. Fraud Detection Dashboard" required>
                                 </label>
                                 <label>
                                     Tags
-                                    <input name="tags" type="text" placeholder="Power BI, SQL, Python" required>
+                                    <input name="tags" id="projectTags" type="text" placeholder="Power BI, SQL, Python" required>
                                 </label>
                             </div>
                             <label>
+                                Live Project URL (Optional)
+                                <input name="liveLink" id="projectLiveLink" type="url" placeholder="e.g. https://app.powerbi.com/... or https://your-flask-app.com">
+                            </label>
+                            <label>
                                 Project details
-                                <textarea name="description" rows="5" placeholder="What problem did this solve? What tools did you use?" required></textarea>
+                                <textarea name="description" id="projectDesc" rows="5" placeholder="What problem did this solve? What tools did you use?" required></textarea>
                             </label>
                             <label>
-                                Project photos
+                                Project photos (Slideshow)
                                 <input name="images" type="file" accept="image/*" multiple>
+                                <small class="form-help" id="imageHelpText">Upload multiple files to create a slide. New uploads add to existing slides unless cleared.</small>
                             </label>
                             <label>
-                                README file
-                                <input name="readme" type="file" accept=".md,.markdown,.txt,text/markdown,text/plain">
+                                Project Report (PDF)
+                                <input name="report" type="file" accept="application/pdf">
+                                <small class="form-help" id="reportHelpText">Upload a native PDF report. Visitors can download this directly.</small>
                             </label>
-                            <div class="form-actions">
-                                <button class="btn primary" type="submit">Publish Project</button>
-                                <button class="btn secondary" type="button" id="clearProjects">Clear Uploaded Projects</button>
+                            <div class="form-actions" style="margin-top: 10px;">
+                                <button class="btn primary" type="submit" id="submitBtn">Publish Project</button>
+                                <button class="btn secondary" type="button" id="cancelEditBtn" hidden>Cancel Edit</button>
+                                <button class="btn secondary" type="button" id="clearImageBtn" hidden>Remove Images</button>
+                                <button class="btn secondary" type="button" id="clearReportBtn" hidden>Remove Report</button>
                             </div>
                             <p class="form-message" id="projectMessage" role="status"></p>
                         </form>
