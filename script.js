@@ -294,8 +294,7 @@ async function deleteProject(id) {
 
 async function loadServerProjects() {
     try {
-        // THIS IS THE CRITICAL CHANGE FOR GITHUB PAGES!
-        // We now fetch directly from the static JSON file instead of the API.
+        // Fetching directly from the JSON file to ensure it works flawlessly on GitHub Pages
         const response = await fetch("data/projects.json");
         if (response.ok) {
             const projects = await response.json();
