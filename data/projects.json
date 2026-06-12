@@ -1,0 +1,29 @@
+[
+  {
+    "id": "ocfe3sth4mqaqob9t",
+    "title": "Sales-Analytics",
+    "description": "This project is an interactive Power BI dashboard built using the Adventure Works dataset. The objective was to transform raw transactional data into actionable business intelligence, allowing stakeholders to transition from asking \"what happened\" to understanding \"why it happened.\"\n\nThe dashboard consolidates sales data into a single decision-support platform, enabling deep exploration into product profitability, geographic trends, and demographic influences.",
+    "tags": [
+      "Power Bi",
+      "Excel",
+      "DAX",
+      "Power Query",
+      "Data Analysis",
+      "Data Modeling",
+      "KPI Monitoring",
+      "ETL",
+      "Data Cleaning"
+    ],
+    "images": [
+      "data/uploads/img_ocfe3sth4mqaqob9t_0_1781262105904.png",
+      "data/uploads/img_ocfe3sth4mqaqob9t_1_1781262105908.png",
+      "data/uploads/img_ocfe3sth4mqaqob9t_2_1781262105909.png",
+      "data/uploads/img_ocfe3sth4mqaqob9t_3_1781262105913.png",
+      "data/uploads/img_ocfe3sth4mqaqob9t_4_1781262105915.png"
+    ],
+    "report": {
+      "name": "Sales_Analytics_Performance_Report.pdf",
+      "content": "data/uploads/report_ocfe3sth4mqaqob9t_1781262255397.pdf"
+    }
+  }
+]
