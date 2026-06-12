@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saleem | Data Scientist & AI Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="site-nav" aria-label="Main navigation">
+        <a class="logo" href="#top">Saleem.</a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="btn-nav">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main id="top">
+        <header class="hero section-band">
+            <div class="hero-content">
+                <p class="eyebrow">Data systems, analytics, and applied AI</p>
+                <h1>Hi, I'm Saleem</h1>
+                <h2>I am a <span class="typing-text"></span><span class="cursor" aria-hidden="true"></span></h2>
+                <p class="hero-copy">I build scalable systems, automated data workflows, and intelligent AI tools that help teams move from scattered information to confident decisions.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="https://github.com/yourusername" target="_blank" rel="noreferrer" class="btn secondary">GitHub</a>
+                </div>
+            </div>
+            <div class="hero-visual" aria-label="Saleem profile image">
+                <div class="portrait-frame">
+                    <img src="images/profile.jpeg" alt="Saleem - Data Scientist">
+                </div>
+                <div class="metric-strip" aria-label="Experience highlights">
+                    <span><strong>ETL</strong> pipelines</span>
+                    <span><strong>RAG</strong> systems</span>
+                    <span><strong>BI</strong> dashboards</span>
+                </div>
+            </div>
+        </header>
+
+        <section id="about" class="about-section section-band">
+            <div class="container two-column">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>Turning complex data into usable intelligence.</h2>
+                </div>
+                <p>I specialize in translating complex organizational data into actionable intelligence. My work spans end-to-end data pipelines, anomaly detection, dashboards, and Retrieval-Augmented Generation systems built with clear architecture and decision-makers in mind.</p>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section section-band">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">Capabilities</p>
+                    <h2>Core Competencies</h2>
+                </div>
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <span class="skill-icon">01</span>
+                        <h3>Data Engineering</h3>
+                        <p>Automated ETL processes, anomaly detection, reusable Python tooling, SQL, and clean data models.</p>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-icon">02</span>
+                        <h3>AI & Machine Learning</h3>
+                        <p>RAG systems, Hugging Face workflows, LangChain integrations, and local document querying.</p>
+                    </article>
+                    <article class="skill-card">
+                        <span class="skill-icon">03</span>
+                        <h3>Business Intelligence</h3>
+                        <p>Power BI, Zoho Analytics, Excel dashboards, KPI monitoring, and executive reporting.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section section-band">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">Portfolio</p>
+                        <h2>Featured Projects</h2>
+                    </div>
+                </div>
+                <div class="projects-grid" id="projectsGrid" aria-live="polite"></div>
+            </div>
+        </section>
+
+        <section id="owner-dashboard" class="admin-section section-band" aria-label="Owner project dashboard">
+            <div class="container admin-shell">
+                <div class="admin-intro">
+                    <p class="eyebrow">Private backend</p>
+                    <h2>Project Manager</h2>
+                    <p>Add a project, upload clean screenshots, and attach a README file. The screenshots and README preview will display together as a smooth project slideshow.</p>
+                    <p class="admin-note">Access this page directly with <code>#owner-dashboard</code>, or double-click the Saleem logo. Keep the password private before hosting this publicly.</p>
+                </div>
+
+                <div class="admin-panel">
+                    <form class="login-form" id="loginForm">
+                        <label for="adminPassword">Owner password</label>
+                        <div class="inline-control">
+                            <input id="adminPassword" type="password" autocomplete="current-password" placeholder="Enter password">
+                            <button class="btn primary" type="submit">Unlock</button>
+                        </div>
+                        <p class="form-help">Default password: <strong>saleem-admin</strong>. Change it in <code>script.js</code>.</p>
+                        <p class="form-message" id="loginMessage" role="status"></p>
+                    </form>
+
+                    <div class="admin-workspace" id="adminWorkspace" hidden>
+                        <a href="#top" class="btn secondary">Back to portfolio</a>
+                        <form id="projectForm" class="project-form">
+                            <div class="form-grid">
+                                <label>
+                                    Project title
+                                    <input name="title" type="text" placeholder="e.g. Fraud Detection Dashboard" required>
+                                </label>
+                                <label>
+                                    Tags
+                                    <input name="tags" type="text" placeholder="Power BI, SQL, Python" required>
+                                </label>
+                            </div>
+                            <label>
+                                Project details
+                                <textarea name="description" rows="5" placeholder="What problem did this solve? What tools did you use?" required></textarea>
+                            </label>
+                            <label>
+                                Project photos
+                                <input name="images" type="file" accept="image/*" multiple>
+                            </label>
+                            <label>
+                                README file
+                                <input name="readme" type="file" accept=".md,.markdown,.txt,text/markdown,text/plain">
+                            </label>
+                            <div class="form-actions">
+                                <button class="btn primary" type="submit">Publish Project</button>
+                                <button class="btn secondary" type="button" id="clearProjects">Clear Uploaded Projects</button>
+                            </div>
+                            <p class="form-message" id="projectMessage" role="status"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Let's Build Something.</h2>
+        <p>Currently based in Abuja, Nigeria and open for collaborations.</p>
+        <a href="mailto:your.email@example.com" class="btn primary">Email Me</a>
+        <p class="copyright">&copy; 2026 Saleem. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
