@@ -1,5 +1,43 @@
 [
   {
+    "id": "yyict4gs8mqc4d63x",
+    "title": "Slimsnaps Pipeline Intelligence CRM",
+    "description": "Built a high-performance, secure lead management system and automated data pipeline designed to bridge dynamic server-side routing with cloud data architecture.\n\nCloud Architecture & Fail-safes: Engineered the application to run within an isolated Linux container via Azure App Service, utilizing secure environment variables (DB_SERVER, DB_UID, DB_PWD) to protect database credentials.\n\nRelational Database Integrity: Implemented a robust data layer talking directly to an Azure SQL Server instance using ODBC Driver 18, configured with strict TLS cloud encryption (Encrypt=yes) and certificate validation overrides for seamless database handshakes.\n\nAutomated Deployment Pipeline: Architected an end-to-end continuous integration and continuous deployment (CI/CD) pipeline via GitHub Actions. Any backend schema modifications, style updates, or route adjustments pushed to GitHub automatically trigger server builds, library updates via a managed dependency footprint (requirements.txt), and zero-downtime hot reloads on the production site.",
+    "tags": [
+      "Python (Flask)",
+      "Azure SQL Database",
+      "ODBC Driver 18",
+      "CI/CD (GitHub Actions)",
+      "Data Architecture",
+      "Relational Integrity"
+    ],
+    "liveLink": "https://slimsnaps-pipelineintelligence-cvh6eucbh6aqetgf.westeurope-01.azurewebsites.net",
+    "images": [
+      "data/uploads/img_yyict4gs8mqc4d63x_0_1781340877963.png",
+      "data/uploads/img_yyict4gs8mqc4d63x_1_1781340877967.png",
+      "data/uploads/img_yyict4gs8mqc4d63x_2_1781340877970.png"
+    ],
+    "report": null
+  },
+  {
+    "id": "base-1",
+    "title": "Custom Data Cleaning Library",
+    "description": "Developed a reusable Python library for automated wrangling, anomaly detection, and preprocessing across large enterprise datasets.",
+    "tags": [
+      "Python",
+      "ETL"
+    ],
+    "liveLink": "https://github.com/Slimsnapz/saleemDataCleaner",
+    "images": [
+      "data/uploads/img_base-1_0_1781323244612.png",
+      "data/uploads/img_base-1_1_1781323274850.png"
+    ],
+    "report": {
+      "name": "Saleem_Data_Cleaner_Portfolio_Report.pdf",
+      "content": "data/uploads/report_base-1_1781324137592.pdf"
+    }
+  },
+  {
     "id": "ocfe3sth4mqaqob9t",
     "title": "Sales-Analytics",
     "description": "This project is an interactive Power BI dashboard built using the Adventure Works dataset. The objective was to transform raw transactional data into actionable business intelligence, allowing stakeholders to transition from asking \"what happened\" to understanding \"why it happened.\"\n\nThe dashboard consolidates sales data into a single decision-support platform, enabling deep exploration into product profitability, geographic trends, and demographic influences.",
@@ -14,12 +52,14 @@
       "ETL",
       "Data Cleaning"
     ],
+    "liveLink": "",
     "images": [
       "data/uploads/img_ocfe3sth4mqaqob9t_0_1781262105904.png",
       "data/uploads/img_ocfe3sth4mqaqob9t_1_1781262105908.png",
       "data/uploads/img_ocfe3sth4mqaqob9t_2_1781262105909.png",
       "data/uploads/img_ocfe3sth4mqaqob9t_3_1781262105913.png",
-      "data/uploads/img_ocfe3sth4mqaqob9t_4_1781262105915.png"
+      "data/uploads/img_ocfe3sth4mqaqob9t_4_1781262105915.png",
+      "data/uploads/img_ocfe3sth4mqaqob9t_5_1781323257230.png"
     ],
     "report": {
       "name": "Sales_Analytics_Performance_Report.pdf",
