@@ -294,7 +294,6 @@ async function deleteProject(id) {
 
 async function loadServerProjects() {
     try {
-        // Fetching directly from the JSON file to ensure it works flawlessly on GitHub Pages
         const response = await fetch("data/projects.json");
         if (response.ok) {
             const projects = await response.json();
@@ -342,6 +341,26 @@ function initAdmin() {
     const clearImgBtn = document.querySelector("#clearImageBtn");
     const clearReportBtn = document.querySelector("#clearReportBtn");
 
+    // Password Toggle Logic
+    const togglePwdBtn = document.querySelector("#togglePasswordBtn");
+    const pwdInput = document.querySelector("#adminPassword");
+    const eyeIcon = document.querySelector("#eyeIcon");
+    const eyeOffIcon = document.querySelector("#eyeOffIcon");
+
+    if (togglePwdBtn && pwdInput) {
+        togglePwdBtn.addEventListener("click", () => {
+            if (pwdInput.type === "password") {
+                pwdInput.type = "text";
+                eyeIcon.style.display = "none";
+                eyeOffIcon.style.display = "block";
+            } else {
+                pwdInput.type = "password";
+                eyeIcon.style.display = "block";
+                eyeOffIcon.style.display = "none";
+            }
+        });
+    }
+
     const secretTrigger = document.querySelector("#secretAdminTrigger");
     const exitBtn = document.querySelector("#exitAdminBtn");
 
@@ -363,11 +382,12 @@ function initAdmin() {
 
     loginForm.addEventListener("submit", async (event) => {
         event.preventDefault();
-        const pwd = document.querySelector("#adminPassword").value;
+        const pwd = pwdInput.value;
         const messageEl = document.querySelector("#loginMessage");
         
         try {
             const check = await fetch("/api/verify", { headers: { "x-admin-password": pwd } });
+            
             if (check.ok) {
                 ACTIVE_PASSWORD = pwd;
                 messageEl.style.color = "var(--accent)";
@@ -377,15 +397,23 @@ function initAdmin() {
                     workspace.hidden = false;
                     messageEl.textContent = "";
                     messageEl.style.color = "var(--muted)";
+                    pwdInput.value = ""; // Clear password visually
+                    pwdInput.type = "password"; // Reset toggle
+                    eyeIcon.style.display = "block";
+                    eyeOffIcon.style.display = "none";
                     renderAdminProjects();
                 }, 800);
+            } else if (check.status === 404) {
+                // This means the user is trying to log in on GitHub Pages, where the API doesn't exist!
+                messageEl.style.color = "#c65042";
+                messageEl.textContent = "Admin locked. You must run the local server.py to log in.";
             } else {
                 messageEl.style.color = "#c65042";
                 messageEl.textContent = "Incorrect password.";
             }
         } catch {
             messageEl.style.color = "#c65042";
-            messageEl.textContent = "Cannot connect to local server. Are you running server.py?";
+            messageEl.textContent = "Cannot connect. Are you sure server.py is running on localhost:3000?";
         }
     });
 
