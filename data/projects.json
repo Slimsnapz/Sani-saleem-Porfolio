@@ -1,5 +1,28 @@
 [
   {
+    "id": "ofkmuadmtmr9bxqfd",
+    "title": "Customer Churn Predictor",
+    "description": "An end-to-end Machine Learning pipeline predicting telecom customer churn risk. Built to demonstrate full-stack MLOps capabilities by transitioning a Jupyter-trained classification model into a production-ready, cloud-hosted web application.  Long Description / Highlights (For the detailed project page):  Dynamic Feature Padding: Engineered a custom Flask middleware layer that dynamically maps UI inputs and injects zero-padded baselines to prevent Scikit-Learn strict shape-mismatch errors from partial payloads.  Cross-OS Deployment Resolution: Architected a pivot from C-array dependent models to math-based models (Logistic Regression) to bypass Windows-to-Linux serialization (pickle) corruption on cloud servers.  Decoupled Architecture: Deployed a Next.js UI on Vercel edge networks, communicating securely with a containerized Python backend hosted on Render via CORS-enabled REST endpoints.",
+    "tags": [
+      "Python",
+      "Flask",
+      "Next.js",
+      "Scikit-Learn",
+      "Tailwind CSS",
+      "Vercel",
+      "Render"
+    ],
+    "liveLink": "https://customer-churn-predictor-pied.vercel.app/",
+    "images": [
+      "data/uploads/img_ofkmuadmtmr9bxqfd_0_1783348978761.png",
+      "data/uploads/img_ofkmuadmtmr9bxqfd_1_1783348978762.png"
+    ],
+    "report": {
+      "name": "telecom_churn_project_report.pdf",
+      "content": "data/uploads/report_ofkmuadmtmr9bxqfd_1783348978763.pdf"
+    }
+  },
+  {
     "id": "yyict4gs8mqc4d63x",
     "title": "Slimsnaps Pipeline Intelligence CRM",
     "description": "Built a high-performance, secure lead management system and automated data pipeline designed to bridge dynamic server-side routing with cloud data architecture.\n\nCloud Architecture & Fail-safes: Engineered the application to run within an isolated Linux container via Azure App Service, utilizing secure environment variables (DB_SERVER, DB_UID, DB_PWD) to protect database credentials.\n\nRelational Database Integrity: Implemented a robust data layer talking directly to an Azure SQL Server instance using ODBC Driver 18, configured with strict TLS cloud encryption (Encrypt=yes) and certificate validation overrides for seamless database handshakes.\n\nAutomated Deployment Pipeline: Architected an end-to-end continuous integration and continuous deployment (CI/CD) pipeline via GitHub Actions. Any backend schema modifications, style updates, or route adjustments pushed to GitHub automatically trigger server builds, library updates via a managed dependency footprint (requirements.txt), and zero-downtime hot reloads on the production site.",
