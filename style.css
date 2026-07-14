@@ -401,43 +401,6 @@ footer p {
     object-fit: cover;
 }
 
-.project-hover-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(11, 15, 20, 0.85);
-    backdrop-filter: blur(2px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-    opacity: 0;
-    transition: opacity 300ms ease;
-    z-index: 5;
-}
-
-.interactive-card:hover .project-hover-overlay {
-    opacity: 1;
-}
-
-.project-hover-overlay p {
-    color: #fff;
-    font-size: 1rem;
-    line-height: 1.5;
-    text-align: center;
-    font-weight: 500;
-}
-
-.view-prompt {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-    color: var(--accent);
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-}
-
 .project-placeholder {
     display: grid;
     height: 100%;
@@ -471,27 +434,13 @@ footer p {
 }
 
 .card-title {
-    margin-bottom: 14px;
     font-size: 1.3rem;
     display: inline-block;
     transition: color 200ms ease;
 }
 
-.click-arrow {
-    display: inline-block;
-    opacity: 0;
-    transform: translate(-10px, 10px);
-    color: var(--accent);
-    transition: all 300ms ease;
-}
-
 .interactive-card:hover .card-title {
     color: var(--brand);
-}
-
-.interactive-card:hover .click-arrow {
-    opacity: 1;
-    transform: translate(2px, 0);
 }
 
 .project-tags {
@@ -598,6 +547,7 @@ footer p {
     margin-bottom: 15px;
 }
 
+/* ADMIN MODES */
 .admin-section {
     display: none;
     min-height: 100vh;
