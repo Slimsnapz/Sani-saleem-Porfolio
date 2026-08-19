@@ -1,7 +1,7 @@
 const ADMIN_PASSWORD = "Shadow8844.";
 const STORAGE_KEY = "saleemPortfolioProjects";
 
-const titles = ["Data Analyst.", "Business Intelligence Analyst", "Data Scientist.", "AI Developer.","Data Engineer."];
+const titles = ["Data Analyst.", "Business Intelligence Analyst.", "Data Scientist.", "AI Developer.","Data Engineer."];
 
 // Emptied the dummy projects so only your REAL uploaded projects show up!
 const baseProjects = [];
