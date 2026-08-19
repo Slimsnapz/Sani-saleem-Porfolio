@@ -1,7 +1,7 @@
 let ACTIVE_PASSWORD = ""; 
 const STORAGE_KEY = "saleemPortfolioProjects";
 
-const titles = ["Data Scientist.", "Data Analyst.", "AI Developer.","Data Engineer."];
+const titles = ["Data Analyst.", "Business Intelligence Analyst", "Data Scientist.", "AI Developer.","Data Engineer."];
 const baseProjects = [
     { id: "base-1", title: "Custom Data Cleaning Library", description: "Developed a reusable Python library for automated wrangling, anomaly detection, and preprocessing across large enterprise datasets.", tags: ["Python", "ETL"], images: [], report: null },
     { id: "base-2", title: "Institutional RAG Assistant", description: "Engineered a localized AI assistant capable of querying organizational SOPs with retrieval workflows and document-aware responses.", tags: ["AI/ML", "LangChain"], images: [], report: null },

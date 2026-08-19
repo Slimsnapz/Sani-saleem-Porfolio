@@ -1,5 +1,29 @@
 [
   {
+    "id": "eznkksbl1mt039gy6",
+    "title": "Enterprise Freight Logistics & Fleet Intelligence System",
+    "description": "Overview:\nAn end-to-end business intelligence and fleet analytics engine tracking 85,410 delivered freight loads, 122.2M road miles, 120 commercial power units, and 150 CDL drivers across a 3-year operating period. The project evaluates direct contribution margins, asset lifecycle depreciation, network facility bottlenecks, and driver liability risks to surface over $4.6M in cost savings and revenue recovery.\n\nTools & Architecture:\n\u2022 Data Engineering & ETL: Python (Pandas, NumPy) for automated data cleaning, timestamp standardization, and surrogate key injection (DRV_UNASSIGNED / TRK_UNASSIGNED).\n\u2022 Data Modeling: 1-to-Many single-direction Star Schema in Power BI (6 fact tables, 6 shared dimensions).\n\u2022 Analytical Engine: 30+ explicit DAX measures covering contribution margins, Maintenance CPM, On-Time Delivery rates, and frequency vs. severity safety splits.\n\u2022 Presentation: 4-page interactive Power BI executive dashboard and formal C-suite briefing report.\n\nKey Insights & Business Impact:\n\u2022 Fleet Replacement Strategy: 2015-model power units drove 63.9% of repair costs ($3.66M) and 64.5% of total shop downtime (46,608 hrs). Decommissioning this cohort delivers an estimated $850K\u2013$1.1M in annual maintenance savings.\n\u2022 Facility Bottleneck Enforcement: Delivery docks averaged 106.6 minutes dwell time (+39.3% vs. pickups), reducing on-time delivery to 44.6%. Enforcing automated SLA detention billing triggers after 60 minutes recovers up to $3.0M in unbilled waiting time.\n\u2022 Fuel Surcharge Risk: Surcharges recovered 31.4% ($29.98M) of pump diesel spend ($95.59M), leaving $65.61M absorbed by base hauling revenue. Recommended contract recalibration from 6.5 MPG assumptions to actual 4.98 MPG fleet baselines to insulate linehaul margins.\n\u2022 Safety & Idle Reduction: 37.6% of safety incidents were preventable ($904K in payouts), and non-driving engine idling consumed $1.85M in unrecovered fuel burn.",
+    "tags": [
+      "Power BI",
+      "DAX",
+      "Python",
+      "Star Schema",
+      "Supply Chain",
+      "Logistics Analytics"
+    ],
+    "liveLink": "https://github.com/saleemsani/enterprise-logistics-fleet-analytics",
+    "images": [
+      "data/uploads/img_eznkksbl1mt039gy6_0_1787143778982.png",
+      "data/uploads/img_eznkksbl1mt039gy6_1_1787143778987.png",
+      "data/uploads/img_eznkksbl1mt039gy6_2_1787143778991.png",
+      "data/uploads/img_eznkksbl1mt039gy6_3_1787143778994.png"
+    ],
+    "report": {
+      "name": "Freight_Operations_Executive_Report.pdf",
+      "content": "data/uploads/report_eznkksbl1mt039gy6_1787143779001.pdf"
+    }
+  },
+  {
     "id": "ofkmuadmtmr9bxqfd",
     "title": "Customer Churn Predictor",
     "description": "An end-to-end Machine Learning pipeline predicting telecom customer churn risk. Built to demonstrate full-stack MLOps capabilities by transitioning a Jupyter-trained classification model into a production-ready, cloud-hosted web application.  Long Description / Highlights (For the detailed project page):  Dynamic Feature Padding: Engineered a custom Flask middleware layer that dynamically maps UI inputs and injects zero-padded baselines to prevent Scikit-Learn strict shape-mismatch errors from partial payloads.  Cross-OS Deployment Resolution: Architected a pivot from C-array dependent models to math-based models (Logistic Regression) to bypass Windows-to-Linux serialization (pickle) corruption on cloud servers.  Decoupled Architecture: Deployed a Next.js UI on Vercel edge networks, communicating securely with a containerized Python backend hosted on Render via CORS-enabled REST endpoints.",
